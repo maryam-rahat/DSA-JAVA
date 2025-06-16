@@ -1,10 +1,9 @@
 class Solution {
     public int minBitFlips(int start, int goal) {
-        int result = start^goal;
-        String res = Integer.toBinaryString(result);
+        int res = start^goal;
         int count = 0;
-        for(int i = 0; i<res.length(); i++){
-            if(res.charAt(i)=='1') count++;
+        for(int i = 0; i<32; i++){
+            if((res & (1<<i)) != 0) count++;
         }
         return count;
     }
