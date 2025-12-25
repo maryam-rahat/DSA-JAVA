@@ -9,7 +9,7 @@ class Solution {
 
         for(int i = n-1; i >= 0; i--){
             long happy = (long)happiness[i] - y;
-            if( x == k) return count;
+            // if( x == k) return count;
             if( x != k && happy > 0){
                 count += happy;
                 y++;
