@@ -1,9 +1,15 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:
         n = len(nums)
-        c = Counter(nums)
+        res = []
 
-        # max_freq = max(c.values())
-        most_freq =[key for key, count in c.items() if count > n//3]
-        return most_freq
-        
+        freq = defaultdict(int)
+
+        for j in range(n):
+            freq[nums[j]] +=1
+
+        for num, count in freq.items():
+            if count > n // 3:
+                res.append(num)
+                
+        return res
